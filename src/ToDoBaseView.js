@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import ToDoItemText from './ToDoItemText';
-import ToDoItemListView  from './ToDoItemListView';
+import ToDoItemListView from './ToDoItemListView';
 import ToDoActionView  from './ToDoActionView'
 
 class ToDoBaseView  extends Component {
@@ -92,7 +92,7 @@ class ToDoBaseView  extends Component {
                 <div className="column right">
                     <ul>
                     {this.state.toDoItemArr.map((toDoItem ,index) => (
-                       <ToDoItemListView 
+                       <ToDoItemListView
                        id = {toDoItem.id}
                        name = {toDoItem.name}
                        isChecked = {toDoItem.isChecked}
