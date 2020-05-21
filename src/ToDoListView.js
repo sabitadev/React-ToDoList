@@ -1,36 +1,28 @@
-import React , { Component } from 'react';
-import ToDoItemText from './ToDoItemText';
-import ToDoItemListView from './ToDoItemListView';
-import ToDoActionView  from './ToDoActionView'
+import React  ,{Component} from 'react';
+import ToDoItemText from './ToDoItemText'
+import ToDoActionView from './ToDoActionView'
+import ToDoItemView from './ToDoItemView'
 
-class ToDoBaseView  extends Component {
-    
+class ToDoListView extends Component
+{
     constructor()
     {
         super()
         this.state = {
-                       toDoItemArr : [{id:1, name:"Read javascript" ,isChecked:false ,isDisabled:false} ,
-                                      {id:2, name:"Test innovationmotor",isChecked:false ,isDisabled:false} ,
-                                      {id:3, name:"Cook Food",isChecked:false ,isDisabled:false}],
-                       value:''
+                    toDoItemArr : [{id:1, name:"Read javascript" ,isChecked:false ,isDisabled:false} ,
+                                    {id:2, name:"Test innovationmotor",isChecked:false ,isDisabled:false} ,
+                                    {id:3, name:"Cook Food",isChecked:false ,isDisabled:false}],
+                    value:''
                     }    
     }
-    componentWillUnmount(){
-        
-    }
-    handleChangeToDoItemText(e) {
-        this.setState({ value: e.target.value })
-     }
-     keyPressToDoItemText(e){
+    keyPressToDoItemText(e){
         if(e.keyCode === 13){
-           console.log('value', e.target.value)
-           this.setState({ value: '' })
-           var toDoItemArray = this.state.toDoItemArr.slice();
-           var toDoItem = {id :toDoItemArray.length + 1  ,name:e.target.value}
-           toDoItemArray.push(toDoItem)
-           this.setState({ toDoItemArr : toDoItemArray})
+        var toDoItemArray = this.state.toDoItemArr.slice();
+        var toDoItem = {id :toDoItemArray.length + 1  ,name:e.target.value}
+        toDoItemArray.push(toDoItem)
+        this.setState({ toDoItemArr : toDoItemArray})
         }
-     }
+    }
     deleteItemHandler(id)
     {
         var arr = this.state.toDoItemArr.slice();
@@ -75,14 +67,13 @@ class ToDoBaseView  extends Component {
         this.setState({toDoItemArr : toDoItemArr})  
 
     }
-    
+
     render(){
         return(
             <div>
                 <ToDoItemText 
                     value = {this.state.value} 
                     keyPressToDoItemText = {this.keyPressToDoItemText.bind(this)} 
-                    handleChangeToDoItemText = {this.handleChangeToDoItemText.bind(this)}
                 />  
             <div id="container">  
                 <ToDoActionView
@@ -92,14 +83,14 @@ class ToDoBaseView  extends Component {
                 <div className="column right">
                     <ul>
                     {this.state.toDoItemArr.map((toDoItem ,index) => (
-                       <ToDoItemListView
-                       id = {toDoItem.id}
-                       name = {toDoItem.name}
-                       isChecked = {toDoItem.isChecked}
-                       isDisabled = {toDoItem.isDisabled}
-                       itemCheckBoxHandler = {this.itemCheckBoxHandler.bind(this,index)}
-                       deleteItemHandler= {this.deleteItemHandler.bind(this,index)}
-                       /> 
+                    <ToDoItemView
+                    id = {toDoItem.id}
+                    name = {toDoItem.name}
+                    isChecked = {toDoItem.isChecked}
+                    isDisabled = {toDoItem.isDisabled}
+                    itemCheckBoxHandler = {this.itemCheckBoxHandler.bind(this,index)}
+                    deleteItemHandler= {this.deleteItemHandler.bind(this,index)}
+                    /> 
                     ))}  
                     </ul>       
                 </div> 
@@ -107,7 +98,7 @@ class ToDoBaseView  extends Component {
         </div>  
         )
     }
-   
+
 }
 
-export default ToDoBaseView
+export default ToDoListView;

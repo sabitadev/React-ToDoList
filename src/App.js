@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import ToDoBaseView from './ToDoBaseView'
+import ToDoListView from './ToDoListView'
 
 function App() {
   return (
-    <div className="ToDoApp">
-      <header className="App-header">
+    <div className="toDoApp">
+      <header className="appHeader">
        To Do List App
        </header>            
-               <ToDoBaseView></ToDoBaseView> 
+               <ToDoListView></ToDoListView> 
     </div>
   );
 }

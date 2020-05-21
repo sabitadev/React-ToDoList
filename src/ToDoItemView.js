@@ -1,6 +1,6 @@
 import React from 'react';
 
-var ToDoItemListView = function(props) {
+var ToDoItemView = function(props) {
      return(
             <li key = {props.id} >
             <input className="todo" type="checkbox" checked ={props.isChecked} disabled={props.isDisabled}  onChange ={props.itemCheckBoxHandler}/>
@@ -10,4 +10,4 @@ var ToDoItemListView = function(props) {
            
      )
 }
-export default ToDoItemListView;
+export default ToDoItemView;
