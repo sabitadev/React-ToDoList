@@ -1,6 +1,6 @@
-.App-header {
+.appHeader {
   background-color: #282c34;
-  max-height: 200vh;
+  max-height: 400vh;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -8,7 +8,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.Button {
+.button {
   background-color: #b3e6ff;
   border: none;
   color: #0d0d0d;
@@ -19,6 +19,7 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  flex-direction: row;
   width: 200px;
   height : 50px;
 }
@@ -41,21 +42,17 @@ ul li input{
   width: 20px;  
 }
 
-#container {
-display: flex;
-justify-content: flex-start;
-max-width: 1200px;
-flex-direction: row;
-}
 
 .column.left {
-max-width: 250px;
+max-width: 1000px;
 }
 
-.column.right {
+.container {
 border-style: solid;
 border-color: #92a8d1;
-min-width: 500px
+min-width: 500px;
+max-width: 8  00px;
+
 }
 .label {
 color: #92a8d1;
@@ -68,14 +65,14 @@ display: none;
 body{ 
 background-color: #282c34;
 }
-
-.itemtextinput {
-width: 700px;
+.inputTypeText
+{
+width: 50%;
 height: 30px;
 font-size: 20px;
 display: block;
 margin-bottom: 20px;
-background-color: white;
+background-color: red;
 }
 .delete{
 color : red;

@@ -1,12 +1,12 @@
-import React from 'react';
-
+import React , { useContext } from 'react';
+import ToDoItemContext from './ToDoItemContext'
 var ToDoActionView = function(props) {
-
+     const context = useContext(ToDoItemContext);
      return(
             <div className="column left">
-                <button className="removeItem Button" onClick={props.removeSelectedHandler}>Remove Item</button>
-                <button className="selectAll Button" onClick={props.selectAllHandler}>Select All Items</button>
-                <button className="markCompleted Button" onClick={props.markCompleteHandler}>Complete Item</button>
+                <button className="button" onClick={context.onDeleteManyItems}>Remove Items</button>
+                <button className="button" onClick={context.onCheckAllItems}>Select All Items</button>
+                <button className="button" onClick={context.onCompleteManyItems}>Complete Items</button>
             </div>      
      )
 }
